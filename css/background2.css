@@ -1,0 +1,75 @@
+body
+{
+  background-color: #438aca;
+}
+
+#container
+{
+    margin-left: 30px;
+}
+
+header{
+    /* Enable flex mode. */
+    display: flex;
+
+    /* Spread out the elements inside the header. */
+    justify-content: space-between;
+
+    /* Align items vertically in the center. */
+    align-items: center;
+}
+
+h1{
+    color: white;
+    font-size: 60px;
+}
+
+.table-hover 
+{
+    height: 480px;
+    width: 1500px;
+    background-color: aliceblue;
+    font-size: 200%;
+    padding: 50px 30px 50px 70px;
+    border: 2px  black;
+}
+
+img {
+    margin-right: 50px;
+    height: 260px;
+    width: 280px;
+}
+
+h2{
+    color: white;
+    margin-right: 100px;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+h3{
+    color: white;
+    margin-left: 400px;
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+table, th , td  {
+    margin-left: 400px;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 25px;
+}
+
+th {
+    background-color: darkgrey;
+    color: white;
+}
+
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
