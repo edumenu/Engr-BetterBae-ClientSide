@@ -1,0 +1,113 @@
+body{
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+header{
+    /* Enable flex mode. */
+    display: flex;
+
+    /* Spread out the elements inside the header. */
+    justify-content: space-between;
+
+    /* Align items vertically in the center. */
+    align-items: center;
+
+    background-color: #438aca;
+}
+
+@media (max-width: 1000px){
+    header{
+        /* Reverse the axis of the header, making it vertical. */
+        flex-direction: column;
+
+        /* Align items to the begining (the left) of the header. */
+        align-items: flex-start;
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.image1{
+    height: 150px;
+    width: 116px;
+}
+
+.image2{
+    height: 110px;
+    width: 126px;
+    margin-left: 65px;
+}
+
+h1{
+    font-family: Baskerville;
+    font-size: 50px;
+    color: white;
+    font-weight: bolder;
+}
+
+h2{
+    font-family: Baskerville;
+    font-size: 20px;
+    color: white;
+    margin-right: 20px;
+    font-weight: bolder;
+    align-content: center;
+}
+
+h3{
+    font-family: Baskerville;
+    font-size: 30px;
+    color: white;
+    margin-right: 20px;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #438aca;
+    color: white;
+}

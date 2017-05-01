@@ -1,44 +1,70 @@
-body
-{
-    background-color: #438aca;
+
+body {
+    background: #438aca !important;
 }
 
-#container {
-    margin-left: 650px;
-    width: 920px;
-    height: 850px;
+.wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
 }
 
-
-.btn-toolbar
-{
-    margin-left: 90px;
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color:rgba(49, 47, 47,0.3);
+    margin-top: 50px;
+}
+.form-signin-heading,
+.checkbox {
+    margin-bottom: 30px;
 }
 
-.form-inline
-{
-    margin-left: 90px;
-    margin-top: 10px;
+.checkbox {
+    font-weight: normal;
 }
 
-.form-group
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+}
+
+input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 60px;
+}
+
+h2{
+    color: white;
+    margin-left: 80px;
+    margin-bottom: 100px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+}
+
+.Button
 {
     margin-left: 40px;
-    width: 500px;
-    height: 500px;
-}
-
-
-img {
-
-    height: 450px;
-    width: 400px;
-    margin-left: 10px;
-    margin-top: 10px;
 }
 
 .lead{
     color: red;
-    font-size: 90px;
+    font-size: 30px;
 }
-

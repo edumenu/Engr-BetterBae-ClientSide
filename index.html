@@ -1,0 +1,48 @@
+<!--Author: Edem Dumenu
+Creation: 03-12-2017
+Development Team: Edem Dumenu, Luke Clark, Sam Justice
+Description: This activity facilitates the login page
+It receives the User's credentials and passes that information to the server for authentication-->
+
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <!-- Libraries -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="home/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/background.css" rel="stylesheet" />
+    <script src="home/controller.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="myCtrl">
+<div class="wrapper">
+
+    <form class="form-signin">
+        <img src="assets/BB.png" class="img-fluid" alt="responsive image" alt="BB" align="bottom"><h2> BetterBae</h2>
+        <!-- Retrieving the user's first name and last name -->
+        <input type="text" autoGrow class="form-control" ng-model="firstName" placeholder="Username"><br>
+        <input type="password" autoGrow class="form-control" ng-model="lastName" placeholder="Password"><br><br>
+        <div class="btn-toolbar">
+            <!-- Executing the "myFunc" which is being executed in the "myCtrl" controller -->
+            <button type="button" class="btn-primary btn-lg" ng-click="myFunc()">Login</button>
+            <!-- Selecting this button opens the "createNewuser.html" page -->
+            <button type="button" class="btn-primary btn-lg" onclick="window.location='root/createNewUser.html'">Create User</button>
+            <br>
+        </div>
+    </form>
+    <!-- Displaying an error message when there is an invalid input -->
+    <h2 ng-model="my_variable">
+        {{my_variable}}
+
+    </h2>
+
+</div>
+</div>
+
+</body>
+</html>

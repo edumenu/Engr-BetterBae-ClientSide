@@ -1,0 +1,113 @@
+<!--Author: Edem Dumenu
+Creation: 03-13-2017
+Development Team: Edem Dumenu, Luke Clark, Sam Justice
+Description: This activity displays the list of patients associated with the doctor.
+This gives the doctor a chance to select a patient to view his or her statistics-->
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <title>Patient Profile</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../css/background4.css" rel="stylesheet" />
+    <script src="../home/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../home/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="../home/controller.js"></script>
+    <script src="../home/controller2.js"></script>
+</head>
+
+<body ng-app="myApp2">
+
+<header>
+
+    <div class="header-left"></div>
+    <div class="header-center">
+        <h1><img class="image1" src="../assets/BB.png">BetterBae</h1>
+    </div>
+    <div class="header-right"><h2> <img class="image2" src="../assets/icon.jpg" class="img-responsive" alt="Cinque Terre">
+        <!-- Displays the doctors name -->
+        <div ng-controller="doctorName" ng-model="message" id="container">
+            Doctor: {{message}}
+            <a type="button" class="btn btn-primary" role="button" href="../index.html">Logout</a>
+        </div>
+
+    </h2><br>
+
+    </div>
+
+</header>
+
+<div ng-controller="patientlist">
+
+<div id="mySidenav" class="sidenav">
+    <h3>Patient List</h3>
+    <!-- Displays the list of patients -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a ng-repeat="message in messages.patients" onclick="closeNav()" data-toggle="modal" data-target="#myModal" ng-click="removeID(message._id)">{{message.first_name}} {{message.last_name}}</a>
+</div>
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!-- Select time range -->
+                    <h4 class="modal-title">Select Time range</h4>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Input start date and time -->
+                        <h4>Start date and time</h4>
+                    <input type="number" id="day" placeholder="Day:" ng-model="Day"><br><br>
+
+                    <input type="number" id="hour" placeholder="Hour:" ng-model="Hour">
+                    <input type="number" id="minute" placeholder="Minute:" ng-model="Minute"><br><br>
+
+                    <!-- Input end date and time -->
+                    <h4>End date and time</h4>
+                    <input type="number" id="dday" placeholder="Day:" ng-model="dDay"><br><br>
+
+                    <input type="number" id="hhour" placeholder="Hour:" ng-model="hHour">
+                    <input type="number" id="mminute" placeholder="Hour:" ng-model="mMinute"><br><br>
+
+                        <!-- Insert input time into variables -->
+                        <button ng-controller="Scoper" type="button" class="btn btn-primary" ng-click="myFunc1()">Insert Time</button>
+
+                    <div class="modal-footer">
+                        <!-- Opens the "timeRange.html" page  -->
+                        <button type="button" class="btn btn-primary" ng-click="timeRange()" data-dismiss="modal">Enter Time</button>
+                        <!-- Opens the "1hrPage.html" page -->
+                        <button type="button" class="btn btn-primary" ng-click="accessHourPage()" data-dismiss="modal" >1hr Default Time</button>
+                        <!-- Opens the "24hrPage.html" page -->
+                        <button type="button" class="btn btn-primary" ng-click="accessTwentyFourPage()" data-dismiss="modal" >24hr Default Time</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<div id="main">
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+</div>
+
+<!-- 4:3 aspect ratio -->
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" ng-src={{detailFrame}}></iframe>
+</div>
+
+</div>
+
+
+</body>
+</html>

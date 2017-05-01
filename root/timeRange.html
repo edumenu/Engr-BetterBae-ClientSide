@@ -1,0 +1,81 @@
+<!--Author: Edem Dumenu
+Creation: 03-14-2017
+Development Team: Edem Dumenu, Luke Clark, Sam Justice
+Description: This activity executes the "timeRange" controller to display the time
+range input by the doctor
+This gives the doctor the chance to view the patient's data within a given time period-->
+
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <title>Patient Profile</title>
+    <!-- Libraries -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../css/background2.css" rel="stylesheet" />
+    <script src="../ui-bootstrap-custom-build/ui-bootstrap-custom-2.5.0.js"></script>
+    <script src="../ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-2.5.0.js"></script>
+    <script src="../home/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <link src="ui-bootstrap-custom-2.5.0-csp.css">
+    <script src="../home/controller.js"></script>
+    <script src="../home/controller2.js"></script>
+</head>
+<body ng-app="myApp2">
+
+<!-- Displays the patients name -->
+<div ng-controller="patientName" text="text" ng-model="message">
+    <h5>Patient: {{message}}</h5>
+</div>
+
+<a href="timeRange.html" class="btn btn-primary btn-sm pull-right">
+    <span class="glyphicon glyphicon-refresh"></span> Refresh
+</a>
+
+    <table class="table table-responsive" border="0" cellspacing="0" cellpadding="0">
+        <h5>Data from the time range</h5>
+    <tr>
+
+        <td>
+    <table class="table table-responsive" ng-controller="timeRangeCtrl">
+        <thead>
+        <tr>
+            <th>Heart beats per minute (bpm)</th>
+            <th>Date and time(bpm)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="P in records " align="center">
+            <td>{{P.bpm | number: 0}}</td>
+            <td>{{P.date | date : 'medium'}}</td>
+        </tr>
+        </tbody>
+    </table>
+        </td>
+
+    <td>
+    <table class="table table-responsive table2" ng-controller="timeRangeMessage">
+        <thead>
+        <tr>
+            <th>Heart beats out of range</th>
+            <th>Date and time for heart beat out of range</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="P in records1 " align="center">
+            <td class="table-danger">{{P.offendingValue | number: 0}}</td>
+            <td>{{P.date | date : 'medium'}}</td>
+        </tr>
+        </tbody>
+    </table>
+    </td>
+
+    </tr>
+
+    </table>
+
+</body>
+</html>

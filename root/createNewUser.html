@@ -1,3 +1,10 @@
+<!--Author: Edem Dumenu
+Creation: 03-12-2017
+Development Team: Edem Dumenu, Luke Clark, Sam Justice
+Description: This activity displays the create new user page
+It receives the User's credentials and passes that information to the server to create a new user-->
+
+
 <!DOCTYPE html>
 <form lang="en">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -13,46 +20,32 @@
     </head>
 </form>
 
-<body>
-<div id="container">
-    <header> <img src="../assets/BB.png" alt="BB" width="304" height="300"> </header>
-    <div ng-app="myApp1" ng-controller="myCtrl1">
-        <form class="form-horizontal">
-            <div class="form-group form-group-lg">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" class="form-control" ng-model="firstName" placeholder="First Name">
-                </div>
-                <br><br>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" class="form-control" ng-model="lastName" placeholder="Last Name">
-                </div>
-                <br><br>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" class="form-control" ng-model="userName" placeholder="Username">
-                </div>
-                <br><br>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input type="password" class="form-control" ng-model="passWord" placeholder="Password">
-                </div>
-                <br><br>
-                <div class="btn-toolbar">
-                    <button type="button" class="btn-default btn-lg" ng-click="myFunc1()">Create New User</button>
-                    <button type="button" class="btn-default btn-lg" onclick="window.location='login.html'">Cancel</button>
-                    <br>
-                </div>
+<body ng-app="myApp">
+
+<div ng-controller="myCtrl1">
+    <div class="wrapper">
+        <form class="form-signin">
+            <img src="../assets/BB.png" class="img-fluid" alt="responsive image" alt="BB" align="bottom"><h2> BetterBae</h2>
+            <!-- Retrieves a new user's first and last name, userName and password  -->
+            <input type="text" autoGrow class="form-control" ng-model="firstName" placeholder="First Name"><br>
+            <input type="text" autoGrow class="form-control" ng-model="lastName" placeholder="Last Name"><br>
+            <input type="text" autoGrow class="form-control" ng-model="userName" placeholder="Username"><br>
+            <input type="text" autoGrow class="form-control" ng-model="passWord" placeholder="Password"><br>
+            <div class="btn-toolbar">
+                <!-- This button executes myFunc1 in the "myCtrl1" controller -->
+                <button type="button" class="btn-primary btn-lg" ng-click="myFunc1()">Create New User</button>
+                <!-- Selecting this button takes the user back to the "index.html" page -->
+                <button type="button" class="btn-primary btn-lg" onclick="window.location='../index.html'">Cancel</button>
                 <br>
             </div>
         </form>
-        <p class="lead">
+        <!-- Displaying an error message when there is an invalid input -->
+        <h2 ng-model="my_variable">
             {{my_variable1}}
-        </p>
 
+        </h2>
     </div>
 </div>
-</body>
+
 </body>
 </html>
